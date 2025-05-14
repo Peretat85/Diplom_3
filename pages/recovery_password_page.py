@@ -1,5 +1,3 @@
-from time import sleep
-
 from Diplom_3.pages.base_page import BasePage
 from Diplom_3.curl import BASE_URL, LOGIN_URL, FORGOT_PASSWORD_URL, RESET_PASSWORD_URL
 from Diplom_3.locators import Locators

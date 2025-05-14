@@ -1,15 +1,11 @@
 # Раздел "Ленты заказов"
-from time import sleep
-
 from Diplom_3.pages.feed_page import FeedPage
 from Diplom_3.curl import(
     BASE_URL, LOGIN_URL, REGISTER_API_URL, LOGIN_API_URL,
     ORDERS_API_URL, FEED_URL, PROFILE_URL, ORDER_HISTORY_URL
 )
-from Diplom_3.locators import Locators
 import requests
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
 
 # Создание заказа
 #@pytest.fixture ()

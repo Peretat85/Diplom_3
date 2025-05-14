@@ -8,22 +8,27 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 class FeedPage(BasePage):
+    @step("Инициация класса")
     def __init__(self, driver):
         super().__init__(driver, FEED_URL)
         self.locators = Locators.feed_page
 
+    @step("Открыть страницу Лента заказов /feed")
     def open_feed_page(self):
         self.open()
 
     # нажатие на один из заказов
+    @step("Клик на один из заказов")
     def click_order_item(self):
         self.click_element(self.locators.ORDER_ITEM)
 
-    # отображение модального окна заказа - может и не нужно?
+    # отображение модального окна заказа
+    @step("Проверка отображения модального окна")
     def is_order_details_modal_visible(self):
         return self.is_element_visible(self.locators.ORDER_DETAILS_MODAL)
 
     # Отображение текста Состав - используется в ожиданиях
+    @step("Проверка отображения текста Состав")
     def is_order_composition_text_visible(self):
         return self.is_element_visible(self.locators.ORDER_COMPOSITION_TEXT)
 

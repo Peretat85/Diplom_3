@@ -9,6 +9,7 @@ def generate_user_data(name_prefix="Test User"):
     name = f"{name_prefix} {secrets.randbelow(100)}"  # Добавляем случайное число
     return {"email": email, "password": password, "name": name}
 
+
 @pytest.fixture(scope="function")
 def new_user_data():
     """Фикстура для создания случайных данных пользователя."""
