@@ -2,10 +2,10 @@ from Diplom_3.pages.base_page import BasePage
 from Diplom_3.locators import Locators
 from Diplom_3.curl import CONSTRUCTOR_URL, FEED_URL, INGREDIENT_DETAILS_URL
 from selenium.webdriver import ActionChains
-from selenium.webdriver.support.expected_conditions import url_to_be
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from time import sleep
+
 from allure import step
 
 class MainPage(BasePage):

@@ -60,7 +60,6 @@ class FeedPageLocators: # локаторы
     IN_PROGRESS_ORDERS = (By.XPATH, "//h2[text() = 'В работе']/following-sibling::div/ul")
     IN_PROGRESS_ORDER_ID = (By.XPATH, "//div[1]/ul[2]/li[1]")
 
-
 # упрощение локаторов
 class Locators:
     login_page = LoginPageLocators()

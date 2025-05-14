@@ -4,8 +4,6 @@ from Diplom_3.curl import FEED_URL, PROFILE_URL, ORDER_HISTORY_URL
 from allure import step
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 class FeedPage(BasePage):
     @step("Инициация класса")

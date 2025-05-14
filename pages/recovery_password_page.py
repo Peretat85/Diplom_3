@@ -6,7 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from allure import step
 
-
 class LoginPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver, LOGIN_URL)  # заменить страницу на ту где кнопка Восстановить

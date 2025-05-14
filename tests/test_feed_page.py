@@ -6,7 +6,6 @@ from Diplom_3.curl import(
 )
 import requests
 
-
 # Создание заказа
 #@pytest.fixture ()
 def create_order(upload_token_to_session):

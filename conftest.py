@@ -22,7 +22,6 @@ def driver(request):
     yield driver
     driver.quit()
 
-
 # работа с API
 # фикстура для создания пользователя
 @pytest.fixture()

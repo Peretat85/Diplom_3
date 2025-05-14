@@ -55,7 +55,6 @@ class TestMainPage:
         assert main_page.is_ingredient_modal_not_visible()
 
 # Тесты на заказ
-
 class TestOrderMainPage:
     # При добавлении ингредиента в заказ, увеличивается каунтер данного ингредиента
     def test_place_order_logged_in(self, driver):

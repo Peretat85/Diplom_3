@@ -6,6 +6,7 @@ from Diplom_3.locators import Locators
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 class ProfilePage(BasePage):
     def __init__(self, driver):
         super().__init__(driver, BASE_URL)

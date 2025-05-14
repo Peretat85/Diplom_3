@@ -1,4 +1,3 @@
-
 BASE_URL = "https://stellarburgers.nomoreparties.site/" # главная, конструктор
 LOGIN_URL = BASE_URL + "login"  # ЛК для forgot_password_page, login_page
 FORGOT_PASSWORD_URL = BASE_URL +"forgot-password" # забыл пароль
