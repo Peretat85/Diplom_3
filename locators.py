@@ -53,14 +53,12 @@ class FeedPageLocators: # локаторы
     ORDER_COMPOSITION_TEXT = (By.XPATH, "//p[text()='Cостав']") #//p[@class='text text_type_main-medium mb-8']
 
     ORDER_HISTORY_LINK = (By.XPATH, "//a[text()='История заказов']")
-
     ORDER_IN_FEED_ORDERS = (By.XPATH, "//li//p[@class='text text_type_digits-default']")
     ALL_ORDERS_COUNT = (By.XPATH, "//p[text()='Выполнено за все время:']/following-sibling::*")
     TODAY_ORDERS_COUNT = (By.XPATH, "//p[text()='Выполнено за сегодня:']/following-sibling::*")
 
     IN_PROGRESS_ORDERS = (By.XPATH, "//h2[text() = 'В работе']/following-sibling::div/ul")
     IN_PROGRESS_ORDER_ID = (By.XPATH, "//div[1]/ul[2]/li[1]")
-
 
 # упрощение локаторов
 class Locators:

@@ -1,9 +1,7 @@
 # Восстановление пароля - ok
-
 from Diplom_3.pages.recovery_password_page import LoginPage, ForgotPasswordPage
 from Diplom_3.curl import FORGOT_PASSWORD_URL, RESET_PASSWORD_URL
 from Diplom_3.locators import Locators
-
 
 EMAIL = "qwerty@mail.ru"# тестовый пароль
 

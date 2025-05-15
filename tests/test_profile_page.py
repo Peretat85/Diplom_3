@@ -30,7 +30,6 @@ class TestProfile:
         # Ожидаем: переход на страницу истории заказов /account/order-history
         assert driver.current_url == ORDER_HISTORY_URL # можно добавить ожидание загрузки ленты
 
-
 # 3. выход из аккаунта
     # Предусловие: залогиниться, автоматически перебросит на главную
     def test_logout(self, upload_token_to_session, driver):

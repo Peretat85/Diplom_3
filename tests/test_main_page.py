@@ -1,13 +1,8 @@
 # Проверка основного функционала
 
-import pytest
 from Diplom_3.pages.main_page import MainPage
-from Diplom_3.pages.recovery_password_page import LoginPage
 from Diplom_3.curl import CONSTRUCTOR_URL, FEED_URL, INGREDIENT_DETAILS_URL
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from time import sleep
-from Diplom_3.locators import Locators
+
 
 class TestMainPage:
 
@@ -60,7 +55,6 @@ class TestMainPage:
         assert main_page.is_ingredient_modal_not_visible()
 
 # Тесты на заказ
-
 class TestOrderMainPage:
     # При добавлении ингредиента в заказ, увеличивается каунтер данного ингредиента
     def test_place_order_logged_in(self, driver):

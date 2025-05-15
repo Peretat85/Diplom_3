@@ -1,5 +1,3 @@
-from time import sleep
-
 from Diplom_3.pages.base_page import BasePage
 from Diplom_3.curl import BASE_URL, LOGIN_URL, FORGOT_PASSWORD_URL, RESET_PASSWORD_URL
 from Diplom_3.locators import Locators
@@ -7,7 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from allure import step
-
 
 class LoginPage(BasePage):
     def __init__(self, driver):
