@@ -17,22 +17,20 @@ class MainPage(BasePage):
     @step("Открыть страницу Конструктор")
     def open_main_page(self):
         self.open()
-        WebDriverWait(self.driver, 10).until(EC.url_to_be(CONSTRUCTOR_URL))
+        self.page_load(CONSTRUCTOR_URL)
 
     @step("Нажатие на кнопку Конструктор")
     def click_constructor_button(self):
         self.click_element(self.locators.CONSTRUCTOR_BUTTON)
-        WebDriverWait(self.driver, 10).until(EC.url_to_be(CONSTRUCTOR_URL))
 
     @step("Клик по кнопке Лента заказов")
     def click_feed_button(self):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.locators.FEED_BUTTON))
+        self.presence_all_element(self.locators.FEED_BUTTON)
         self.click_element(self.locators.FEED_BUTTON)
 
     @step("Клик по ингредиенту")
     def click_ingredient(self):
-        botton = WebDriverWait(self.driver,10).until(EC.element_to_be_clickable(self.locators.INGREDIENT_BUN))
-        botton.click()
+        self.click_element(self.locators.INGREDIENT_BUN)
 
     @step("Закрыть модальное окно")
     def close_ingredient_modal(self):
@@ -66,5 +64,8 @@ class MainPage(BasePage):
 
     @step("Поиск количества добавленного ингредиента")
     def find_counter(self):
-        return self.find_element(self.locators.INGREDIENT_COUNTER)
+        # element = self.find_element(self.locators.INGREDIENT_COUNTER)
+        # return element.text
+        return self.get_text_of_element(self.locators.INGREDIENT_COUNTER)
+
 

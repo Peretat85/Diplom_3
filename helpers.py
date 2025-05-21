@@ -1,12 +1,14 @@
 import pytest
 import secrets
 import string
+from faker import Faker
 
 def generate_user_data(name_prefix="Test User"):
     """Генерирует случайные данные пользователя."""
-    email = ''.join(secrets.choice(string.ascii_lowercase + string.digits) for _ in range(10)) + "@example.com"
+    faker = Faker()
+    email = faker.email()
     password = ''.join(secrets.choice(string.ascii_lowercase + string.digits) for _ in range(10))
-    name = f"{name_prefix} {secrets.randbelow(100)}"  # Добавляем случайное число
+    name = f"{name_prefix} {secrets.randbelow(100)}" # Добавляем случайное число
     return {"email": email, "password": password, "name": name}
 
 @pytest.fixture(scope="function")

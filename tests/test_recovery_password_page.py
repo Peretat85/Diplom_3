@@ -2,11 +2,12 @@
 from Diplom_3.pages.recovery_password_page import LoginPage, ForgotPasswordPage
 from Diplom_3.curl import FORGOT_PASSWORD_URL, RESET_PASSWORD_URL
 from Diplom_3.locators import Locators
+from allure import title
 
 EMAIL = "qwerty@mail.ru"# тестовый пароль
 
 class TestPasswordReset:
-    # * переход на страницу восстановления пароля по кнопке Восстановить пароль
+    @title("Переход на страницу восстановления пароля по кнопке 'Восстановить пароль'")
     def test_navigate_to_forgot_password(self, driver): # + GH
         # 1. загрузка страницы входа
         login_page = LoginPage(driver)
@@ -16,9 +17,9 @@ class TestPasswordReset:
         login_page.click_forgot_password_link()
 
         # Ожидание: переход на страницу https://stellarburgers.nomoreparties.site/forgot-password
-        assert driver.current_url == FORGOT_PASSWORD_URL
+        assert login_page.get_current_url() == FORGOT_PASSWORD_URL
 
-    # * ввод почты и клик по кнопке Восстановить
+    @title("Переход на страницу восстановления пароля /reset-password при вводе почты и клику по кнопке Восстановить")
     def test_enter_email_and_click_reset(self, driver): # не работает в Firefox без sleep
         # 1. переход на страницу восстановить пароль https://stellarburgers.nomoreparties.site/forgot-password
         forgot_password_page = ForgotPasswordPage(driver)
@@ -31,9 +32,9 @@ class TestPasswordReset:
         forgot_password_page.click_reset_button()
 
         # Ожидаем перехода на страницу https://stellarburgers.nomoreparties.site/forgot-password
-        assert driver.current_url == RESET_PASSWORD_URL
+        assert forgot_password_page.get_current_url() == RESET_PASSWORD_URL
 
-    # * проверка подсветки поля пароль на странице /reset-password
+    @title("Проверка подсветки поля пароль на странице /reset-password при щелчке на 'глазик' ")
     def test_show_password_button(self, driver): # придумать ожидания для Firefox
         # Предусловие1: выполнение перехода на страницу восстановления пароля
         forgot_password_page = ForgotPasswordPage(driver)

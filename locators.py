@@ -4,15 +4,15 @@ from selenium.webdriver.common.by import By
 class MainPageLocators:
     CONSTRUCTOR_BUTTON = (By.XPATH, "//a[./p[text()='Конструктор']]")
     FEED_BUTTON = (By.XPATH, "//a[./p[text()='Лента Заказов']]")
-    INGREDIENT_BUN = (By.XPATH, "//ul[contains(@class, 'BurgerIngredients_ingredients')]/a[1]/img")
+    INGREDIENT_BUN = (By.XPATH, "//a[@href='/ingredient/61c0c5a71d1f82001bdaaa6d']") # заменила
     INGREDIENT_MODAL = (By.XPATH, "//div[contains(@class, 'Modal_modal')]")
-    INGREDIENT_MODAL_HEADER = (By.XPATH, "//div[contains(@class, 'Modal_modal')]/div/h2[text()='Детали ингредиента']")
-    INGREDIENT_MODAL_CLOSE_BUTTON = (By.XPATH, "//div/section[1]/div[1]/button")
+    INGREDIENT_MODAL_HEADER = (By.XPATH, "//h2[text()='Детали ингредиента']")
+    INGREDIENT_MODAL_CLOSE_BUTTON = (By.XPATH, "//button[@class='Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK']") # заменила
     ORDER_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")  # New
     ORDER_MODAL = (By.XPATH, "//div[contains(@class, 'Modal_modal')]")  # New
     ORDER_ID_TEXT = (By.XPATH, "//div[contains(@class, 'Modal_modal')]//p[text()='идентификатор заказа']")  # New
     ORDER_INGREDIENT = (By.XPATH, "//ul[contains(@class, 'BurgerConstructor_basket')]")
-    INGREDIENT_COUNTER = (By.XPATH, "//ul[contains(@class, 'BurgerIngredients_ingredients')]/a[1]/div/p") # заменить
+    INGREDIENT_COUNTER = (By.XPATH, "//a[@href='/ingredient/61c0c5a71d1f82001bdaaa6d']//p[@class='counter_counter__num__3nue1']") # заменила
 
 # страница входа https://stellarburgers.nomoreparties.site/login
 class LoginPageLocators:
@@ -50,15 +50,14 @@ class FeedPageLocators: # локаторы
     PERSONAL_CABINET_BUTTON = (By.XPATH, ".//p[contains(text(),'Личный Кабинет')]")
     ORDER_ITEM = (By.XPATH, "//ul/li[1]//p[@class='text text_type_digits-default']") # первый заказ
     ORDER_DETAILS_MODAL = (By.XPATH,"//div[contains(@class, 'Modal_modal')]")
-    ORDER_COMPOSITION_TEXT = (By.XPATH, "//p[text()='Cостав']") #//p[@class='text text_type_main-medium mb-8']
+    ORDER_COMPOSITION_TEXT = (By.XPATH, "//p[text()='Cостав']")
 
     ORDER_HISTORY_LINK = (By.XPATH, "//a[text()='История заказов']")
     ORDER_IN_FEED_ORDERS = (By.XPATH, "//li//p[@class='text text_type_digits-default']")
     ALL_ORDERS_COUNT = (By.XPATH, "//p[text()='Выполнено за все время:']/following-sibling::*")
     TODAY_ORDERS_COUNT = (By.XPATH, "//p[text()='Выполнено за сегодня:']/following-sibling::*")
 
-    IN_PROGRESS_ORDERS = (By.XPATH, "//h2[text() = 'В работе']/following-sibling::div/ul")
-    IN_PROGRESS_ORDER_ID = (By.XPATH, "//div[1]/ul[2]/li[1]")
+    IN_PROGRESS_ORDER_ID = (By.XPATH, "//ul[@class='OrderFeed_orderListReady__1YFem OrderFeed_orderList__cBvyi']/li[1]")
 
 # упрощение локаторов
 class Locators:

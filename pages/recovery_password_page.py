@@ -28,7 +28,7 @@ class LoginPage(BasePage):
 
     @step("Ввод пароля")
     def enter_password(self, password):
-       ## self.send_keys_to_element(self.locators.PASSWORD_INPUT, password)
+
         password_field = self.find_element(self.locators.PASSWORD_INPUT)
         password_field.send_keys(password)
         password_field.send_keys(Keys.TAB)
@@ -79,6 +79,7 @@ class ForgotPasswordPage(BasePage):
     def is_reset_button_displayed(self):
         return self.is_element_visible(self.locators.RESET_BUTTON)
 
+    @step("Переход на страницу восстановления пароля /reset-password")
     def is_redirected_to_reset_password_page(self, driver):
         return self.driver.current_url == RESET_PASSWORD_URL
 

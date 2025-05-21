@@ -58,3 +58,5 @@ def upload_token_to_session(driver, user_setup):
     headers = {"Authorization": token_response['accessToken']}
     #       print("Отправка запроса на удаление пользователя")
     respon = requests.delete("https://stellarburgers.nomoreparties.site/api/auth/user", headers=headers)
+
+
